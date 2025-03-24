@@ -1,0 +1,100 @@
+{
+  "name": "snet-airdrop",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "install-cdk": "cd cdk && pwd && yarn install --frozen-lockfile",
+    "build": " echo \" Using root package.json \" && next build",
+    "deploy": "ls -l && cd cdk && pwd && npx cdk deploy --require-approval=never --verbose",
+    "start": "next start",
+    "lint": "next lint --fix",
+    "storybook": "start-storybook -p 6006 -c snet-ui/.storybook ",
+    "build-storybook": "build-storybook -s public/ -c snet-ui/.storybook -o snet-ui/.storybook-build",
+    "serve-storybook": "serve snet-ui/.storybook-build"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.4.0",
+    "@emotion/react": "^11.4.1",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@emurgo/cardano-serialization-lib-asmjs": "^14.0.0",
+    "@emurgo/cip14-js": "^3.0.1",
+    "@ethersproject/providers": "^5.6.2",
+    "@material-ui/core": "^4.12.3",
+    "@mui-treasury/components": "^1.10.1",
+    "@mui/icons-material": "^6.4.1",
+    "@mui/lab": "^6.0.0-beta.24",
+    "@mui/material": "^6.4.1",
+    "@mui/styles": "^6.4.1",
+    "@reduxjs/toolkit": "^2.5.1",
+    "@storybook/react": "^8.5.2",
+    "@web3-react/abstract-connector": "^6.0.7",
+    "@web3-react/core": "^8.2.3",
+    "@web3-react/injected-connector": "^6.0.7",
+    "@web3-react/metamask": "^8.2.4",
+    "axios": "^1.7.9",
+    "bignumber.js": "^9.0.1",
+    "eth-rpc-errors": "^4.0.3",
+    "ethers": "^5.6.2",
+    "events": "^3.3.0",
+    "global": "^4.4.0",
+    "html-react-parser": "^5.2.2",
+    "i18next": "^24.2.2",
+    "moment": "^2.29.1",
+    "next": "^15.1.6",
+    "next-i18next": "^15.4.1",
+    "prop-types": "^15.8.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.4.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.1.3",
+    "storybook-addon-material-ui": "^0.9.0-alpha.24",
+    "stylis": "^4.0.10",
+    "tiny-invariant": "^1.1.0",
+    "ua-parser-js": "^2.0.0",
+    "usehooks-ts": "^3.1.0",
+    "web3modal": "^1.9.5"
+  },
+  "devDependencies": {
+    "@sls-next/aws-cloudfront": "3.7.0",
+    "@sls-next/aws-lambda": "3.7.0",
+    "@sls-next/aws-sqs": "^3.5.3",
+    "@sls-next/domain": "^3.5.3",
+    "@sls-next/serverless-component": "3.7.0",
+    "@types/react": "19.0.8",
+    "@types/react-redux": "^7.1.18",
+    "@types/ua-parser-js": "^0.7.36",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "eslint": "^9.19.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "15.1.6",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "husky": "9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "3.4.2",
+    "serverless": "4.5.0",
+    "typescript": "5.7.3"
+  },
+  "engines": {
+    "node": ">=20.x"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
